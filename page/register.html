@@ -1,0 +1,106 @@
+<style>
+  .divider:after,
+  .divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+  }
+
+  .centered-text {
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: -100px;
+    font-size: 50px;
+  }
+
+  .btn {
+    color: #fff;
+    background-color: #5fcf80;
+  }
+
+  .footer {
+    display: none !important;
+  }
+</style>
+<body>
+  <section class="vh-100" ng-app="myApp">
+    <div class="container py-5 h-100">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid"
+            alt="Phone image">
+        </div>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+          <span class="centered-text">REGISTER</span>
+          <form name="frmRegis" id="frmRegis" ng-submit="frmRegis.$valid && register()">
+            <!-- FullName input -->
+            <div class="div-outline mb-4">
+              <label class="form-label" for="form1Example13">Username</label>
+              <input type="text" id="form1Example13" class="form-control form-control-lg" ng-model="text" name="text"
+                required>
+              <small ng-show="frmRegis.text.$error.text" class="form-text text-danger">Username không đúng định
+                dạng</small>
+              <small ng-show="frmRegis.text.$dirty && frmRegis.text.$error.required" class="form-text text-danger">Vui
+                lòng nhập username</small>
+            </div>
+
+            <!-- Email input -->
+            <div class="div-outline mb-4">
+              <label class="form-label" for="form1Example13">Email address</label>
+              <input type="email" id="form1Example13" class="form-control form-control-lg" ng-model="email" name="email"
+                required>
+              <small ng-show="frmRegis.email.$error.email" class="form-text text-danger">Email không đúng định
+                dạng</small>
+              <small ng-show="frmRegis.email.$touched && frmRegis.email.$error.required"
+                class="form-text text-danger">Vui
+                lòng nhập email</small>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example23">Password</label>
+              <input type="password" id="form1Example23" class="form-control form-control-lg" ng-model="password"
+                name="password" required maxlength="25">
+              <small ng-show="frmRegis.password.$touched && frmRegis.password.$error.required"
+                class="form-text text-danger">Vui lòng nhập mật khẩu</small>
+            </div>
+
+            <!-- Gender input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example23">Giới tính</label>
+              <select id="form1Example23" class="form-select form-select-lg" ng-model="gender" name="gender" required>
+                <option value="" disabled selected>Chọn giới tính</option>
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+                <option value="Khác">Khác</option>
+              </select>
+              <small ng-show="frmRegis.gender.$touched && frmRegis.gender.$error.required"
+                class="form-text text-danger">Vui lòng chọn giới tính</small>
+            </div>
+
+            <div class="d-flex justify-content-around align-items-center mb-4">
+              <!-- Checkbox -->
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked>
+                <label class="form-check-label" for="form1Example3"> Remember me </label>
+              </div>
+
+            </div>
+            <!-- Submit button -->
+            <button type="submit" ng-disabled="frmRegis.$invalid" class="btn btn-lg btn-block">Sign
+              up</button>
+            <div class="divider d-flex align-items-center my-4">
+              <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+            </div>
+            <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!" role="button">
+              <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+            </a>
+            <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!" role="button">
+              <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

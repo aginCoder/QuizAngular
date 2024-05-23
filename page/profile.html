@@ -1,0 +1,84 @@
+<style>
+    .card-header {
+    border-radius: 0.25rem 0.25rem 0 0;
+    background-color: #5fcf80;
+    }
+
+    .card-body {
+        border-radius: 0 0 0.25rem 0.25rem;
+    }
+
+    .btn-primary {
+        background-color: #5fcf80;
+        border-color: #5fcf80;
+        margin-top: 50px;
+    }
+
+    .btn-primary:hover {
+        background-color: #5fcf80;
+        border-color: #5fcf80;
+    }
+
+    .form-control:focus {
+        border-color: #5fcf80;
+        box-shadow: none;
+    }
+
+    .invalid-feedback {
+        display: block;
+        margin-top: 0.25rem;
+        font-size: 80%;
+        color: #dc3545;
+    }
+
+</style>
+</head>
+<body ng-controller="updateController">
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header text-white text-center">
+                        <h2 class="card-title">Cập nhật thông tin</h2>
+                    </div>
+                    <div class="card-body">
+                        <form name="updateForm" id="updateForm" novalidate ng-submit="updateForm.$valid && updateData()">
+                            <div class="form-group">
+                                <label for="fullname">Họ và Tên</label>
+                                <input type="text" id="fullname" name="fullname" class="form-control" ng-model="dataInfo.fullname" required>
+                                <small ng-show="updateForm.fullname.$error.required && updateForm.fullname.$touched" class="form-text text-danger">Vui lòng nhập Họ và Tên</small>  
+                            </div>
+                            <div class="form-group">
+                                <label for="email">giới tính</label>
+                                <select ng-model="dataInfo.gender" class="form-select">
+                                    <option value="0">Chọn giới tính</option>
+                                    <option value="true">nam</option>
+                                    <option value="false">nữ</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Mật khẩu</label>
+                                <input type="password" id="password" name="password" class="form-control" ng-model="dataInfo.password" required>
+                                <small ng-show="updateForm.password.$error.required && updateForm.password.$touched" class="form-text text-danger">Vui lòng nhập mật khẩu mới</small>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="birthday">Ngày sinh</label>
+                                <input type="text" id="birthday" name="birthday" class="form-control" ng-model="dataInfo.birthday" required>
+                                <small ng-show="updateForm.birthday.$error.required && updateForm.birthday.$touched" class="form-text text-danger">Vui lòng nhập ngày sinh</small>
+                            </div> -->
+                            <div class="text-center">
+                                <button type="submit" ng-disabled="updateForm.$invalid" class="btn btn-primary">Lưu thay đổi</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+

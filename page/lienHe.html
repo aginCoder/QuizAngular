@@ -1,0 +1,85 @@
+<style>
+  .map-container {
+        height: 500px;
+        position: relative;
+    }
+    
+    .map-container iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+</style>
+
+  <main class="main">
+    <center><h2>Liên hệ</h2></center>
+<!-- Contact Section -->
+<section id="contact" class="contact section">
+  <div id="map-container-google-1" class="z-depth-1 map-container mb-5">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.0373502906655!2d108.15165007490396!3d16.06355148461511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142192f508c3d63%3A0xce85820a33506aad!2zNzcgxJAuIFBo4bqhbSBOaMawIFjGsMahbmcsIEhvw6AgS2jDoW5oIE5hbSwgTGnDqm4gQ2hp4buDdSwgxJDDoCBO4bq1bmcgNTUwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1710222656741!5m2!1svi!2s"
+        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div><!-- End Google Maps -->
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div>
+            <h3>Địa chỉ</h3>
+            <p>77 Phạm Như Xương, Hòa Khánh Nam, Đà Nẵng</p>
+          </div>
+        </div><!-- End Info Item -->
+
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Số điện thoại</h3>
+            <p>093 9487 621</p>
+          </div>
+        </div><!-- End Info Item -->
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+          <i class="bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h3>E-mail</h3>
+            <p>uyenpttpd07722@fpt.edu.vn</p>
+          </div>
+        </div><!-- End Info Item -->
+      </div>
+      <div class="col-lg-8">
+        <form name="contactForm" ng-submit="submitContactForm()" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4">
+              <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" ng-model="formData.name" placeholder="Your Name" required>
+                  <small class="form-text text-danger" ng-show="contactForm.name.$error.required && contactForm.name.$touched">Vui lòng nhập tên</small>
+              </div>
+      
+              <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" ng-model="formData.email" placeholder="Your Email" required>
+                  <small class="form-text text-danger" ng-show="contactForm.email.$error.required && contactForm.email.$touched">Vui lòng nhập email</small>
+              </div>
+      
+              <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" ng-model="formData.subject" placeholder="Subject" required>
+                  <small class="form-text text-danger" ng-show="contactForm.subject.$error.required && contactForm.subject.$touched">Vui lòng nhập môn học</small>
+              </div>
+      
+              <div class="col-md-12">
+                  <textarea class="form-control" name="message" ng-model="formData.message" rows="6" placeholder="Message" required></textarea>
+                  <small class="form-text text-danger" ng-show="contactForm.message.$error.required && contactForm.message.$touched">Vui lòng nhập nội dung</small>
+              </div>
+      
+              <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <a href=""><button type="submit" ng-disabled="contactForm.$invalid">Send Message</button></a>
+              </div>
+          </div>
+      </form>      
+      </div><!-- End Contact Form -->
+    </div>
+  </div>
+</section><!-- /Contact Section -->
+  </main>

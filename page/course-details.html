@@ -1,0 +1,235 @@
+<body>
+
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Thông Tin Khóa Học</h1>
+              <p class="mb-0">Dưới đây là thông tin về khóa học lập trình của chúng tôi, mời bạn tìm hiểu và trỉa nghiệm chúng thật vui vẻ.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li class="current">Khoá Học</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Courses Course Details Section -->
+    <section class="px-5 py-4 rgba-white-strong rounded shadow">
+
+      <h2 class="h1-responsive font-weight-bold text-center">{{ctmonhoc.Name}}</h2>
+      <p class="grey-text text-center w-responsive mx-auto mb-5"></p>
+  
+      <div class="row">
+  
+        <div class="col-lg-5 mb-lg-0 mb-5 d-flex justify-content-center">
+          <img src="/assets/img/Logo/{{ctmonhoc.Logo}}" alt="Sample project image" class="img-fluid rounded z-depth-1" style="max-width: 300px;">
+      </div>      
+  
+          <div class="col-lg-7">
+            <div class="row mb-3">
+                <div class="col-md-1 col-2">
+                    <i class="bi bi-book icon-large" style="color: #5578ff;"></i>
+                </div>
+                <div class="col-md-11 col-10">
+                    <h5 class="font-weight-bold mb-3">Kiến thức</h5>
+                    <p class="grey-text">Thí sinh đảm bảo đã ôn đầy đủ kiến thức trong quá trình học tập</p>
+                </div>
+            </div>
+        
+            <div class="row mb-3">
+                <div class="col-md-1 col-2" style="color: #e80368;">
+                    <i class="bi bi-file-code-fill icon-large"></i>
+                </div>
+                <div class="col-md-11 col-10">
+                    <h5 class="font-weight-bold mb-3">Kỹ năng</h5>
+                    <p class="grey-text">Áp dụng kiến thức vào thức tiển bằng cách trả lời ví dụ theo code mẫu</p>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-1 col-2" style="color: #29cc61;">
+                    <i class="bi bi-cash-coin icon-large"></i>
+                </div>
+                <div class="col-md-11 col-10">
+                    <h5 class="font-weight-bold mb-3">Phí học lại</h5>
+                    <p class="grey-text mb-0">Thí sinh sẽ phải đóng tiền học lại môn nếu thi không đủ điểm.</p>
+                </div>
+            </div>
+        </div>
+        
+  
+      </div>
+  
+      <hr class="my-5">
+  
+      <div class="row">
+  
+          <div class="col-lg-7">
+  
+              <div class="row mb-3">
+                  <div class="col-md-1 col-2">
+                      <i class="fas fa-american-sign-language-interpreting fa-2x indigo-text"></i>
+                  </div>
+                  <div class="col-md-11 col-10">
+                      <h5 class="font-weight-bold mb-3">Công bằng</h5>
+                      <p class="grey-text">Thí sinh đảm báo trung thực trong quá trình thi bằng cách sử dụng kiến thức đã học được.</p>
+                  </div>
+              </div>
+  
+              <div class="row mb-3">
+                  <div class="col-md-1 col-2">
+                      <i class="fas fa-check-double fa-2x pink-text"></i>
+                  </div>
+                  <div class="col-md-11 col-10">
+                      <h5 class="font-weight-bold mb-3">Thành tích</h5>
+                      <p class="grey-text">Thành tích trong bài thi sẽ được đánh giá, ghi nhận và khen thưởng.</p>
+                  </div>
+              </div>
+  
+              <div class="row mb-lg-0 mb-5">
+                  <div class="col-md-1 col-2">
+                      <i class="far fa-grin fa-2x blue-text"></i>
+                  </div>
+                  <div class="col-md-11 col-10">
+                      <h5 class="font-weight-bold mb-3">Mẹo</h5>
+                      <p class="grey-text mb-0">Thí sinh nên làm những câu dễ trước không để mất quá nhiều thời gian cho 1 câu khó.</p>
+                  </div>
+              </div>
+  
+          </div>
+  
+          <div class="col-lg-5 view overlay">
+            <a href="#!courses/{{id_courses}}/{{id_quiz}}/quiz">
+              <img src="./assets/img/start.gif" alt="Sample project image" class="img-fluid rounded z-depth-1" style="width: 300px;">
+                  <div class="mask waves-effect waves-light rgba-white-slight"></div>
+              </a>
+          </div>
+  
+      </div>
+  
+  </section>
+
+    <!-- Tabs Section -->
+    <section id="tabs" class="tabs section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Chế độ này là</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Nơi hiện tại mà</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Giải thích lý do</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Chúng ta như thế nào</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Đúng và thuận tiện hay không</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Kiến trúc sư và sự minh bạch</h3>
+                    <p class="fst-italic">Những người laudantium theo sau công việc lao động của họ, những người chạm vào sự khôn ngoan của họ với sự kích thích lớn.</p>
+                    <p>Và cho chúng tôi biết thêm về họ. Sự hạnh phúc của họ thực sự làm chúng ta sởn gai ốc. Công việc làm họ phát triển mạnh mẽ. Chúng tôi thực sự phát hiện ra sự quan trọng của việc này. Họ làm những gì mà người khác không làm được. Một điều không ai muốn nhận ra, nhưng họ thực sự có thể làm điều đó. Điều này thực sự làm chúng tôi ngạc nhiên.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/tabs/tab-1.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Và không có ai thực sự hiểu được</h3>
+                    <p class="fst-italic">Những người laudantium theo sau công việc lao động của họ, những người chạm vào sự khôn ngoan của họ với sự kích thích lớn.</p>
+                    <p>Và cho chúng tôi biết thêm về họ. Sự hạnh phúc của họ thực sự làm chúng ta sởn gai ốc. Công việc làm họ phát triển mạnh mẽ. Chúng tôi thực sự phát hiện ra sự quan trọng của việc này. Họ làm những gì mà người khác không làm được. Một điều không ai muốn nhận ra, nhưng họ thực sự có thể làm điều đó. Điều này thực sự làm chúng tôi ngạc nhiên.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/tabs/tab-2.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Các rủi ro của sự đơn giản</h3>
+                    <p class="fst-italic">Người laudantium theo đuổi sự lao động của họ. Họ không ngừng chạm vào sự khôn ngoan của họ với sự kích thích lớn.</p>
+                    <p>Và cho chúng tôi biết thêm về họ. Sự hạnh phúc của họ thực sự làm chúng ta sởn gai ốc. Công việc làm họ phát triển mạnh mẽ. Chúng tôi thực sự phát hiện ra sự quan trọng của việc này. Họ làm những gì mà người khác không làm được. Một điều không ai muốn nhận ra, nhưng họ thực sự có thể làm điều đó. Điều này thực sự làm chúng tôi ngạc nhiên.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/tabs/tab-3.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Làm sao để tránh xa khỏi sự nguy hiểm</h3>
+                    <p class="fst-italic">Những người laudantium theo đuổi sự lao động của họ. Họ không ngừng chạm vào sự khôn ngoan của họ với sự kích thích lớn.</p>
+                    <p>Và cho chúng tôi biết thêm về họ. Sự hạnh phúc của họ thực sự làm chúng ta sởn gai ốc. Công việc làm họ phát triển mạnh mẽ. Chúng tôi thực sự phát hiện ra sự quan trọng của việc này. Họ làm những gì mà người khác không làm được. Một điều không ai muốn nhận ra, nhưng họ thực sự có thể làm điều đó. Điều này thực sự làm chúng tôi ngạc nhiên.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/tabs/tab-4.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-5">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Khám phá những điều mới mẻ</h3>
+                    <p class="fst-italic">Những người laudantium theo đuổi sự lao động của họ. Họ không ngừng chạm vào sự khôn ngoan của họ với sự kích thích lớn.</p>
+                    <p>Và cho chúng tôi biết thêm về họ. Sự hạnh phúc của họ thực sự làm chúng ta sởn gai ốc. Công việc làm họ phát triển mạnh mẽ. Chúng tôi thực sự phát hiện ra sự quan trọng của việc này. Họ làm những gì mà người khác không làm được. Một điều không ai muốn nhận ra, nhưng họ thực sự có thể làm điều đó. Điều này thực sự làm chúng tôi ngạc nhiên.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/tabs/tab-5.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>                    
+        </div>
+      </div>
+    </section><!-- /Tabs Section -->
+  </main>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

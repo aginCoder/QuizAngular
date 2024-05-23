@@ -1,0 +1,197 @@
+<style>
+  .container-fluid,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1170px;
+    }
+  }
+  body {
+    background-color: #f6f6f6;
+    background-color: #f1f3fe;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  a:hover {
+    color: #23B5E1 !important;
+  }
+  .navbar li a {
+    display: block;
+    padding: 13px 20px 11px;
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #2c2c2c;
+    border: 2px solid transparent;
+    position: relative;
+  }
+  .navbar .home {
+    border: 2px solid #201c1d;
+    border-radius: 3px;
+  }
+  .navbar .home a:focus,
+  .navbar .home a:hover {
+    color: #2c2c2c !important;
+  }
+  .dropdown-item.active,
+  .dropdown-item:active {
+    color: #fff !important;
+    background-color: #23B5E1 !important;
+  }
+  .sticky {
+    position: fixed;
+    top: 0;
+    z-index: 1 !important;
+    width: 100%;
+    box-shadow: 0 3px 10px 0 rgba(115, 143, 147, 0.3);
+  }
+  .sticky2 {
+    padding-top: 4.7rem;
+  }
+  h2 {
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1.52;
+    margin-top: 24px;
+  }
+  .spacer {
+    height: 6px;
+    width: 100px;
+    background-color: #23B5E1;
+    margin-bottom: 40px;
+  }
+</style>
+<main class="main">
+  <!-- Page Title -->
+  <div class="page-title" data-aos="fade">
+    <div class="heading">
+      <div class="container">
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1 class="">Test Quiz Website<br></h1>
+            <p class="mb-0">Welcome to our test quiz platform where you can challenge your knowledge and skills. Explore
+              our quizzes covering various topics and subjects.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li class="current">Test Quiz Website<br></li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Page Title -->
+
+  <main class="container my-5" id="content">
+
+    <div class="row">
+
+      <div class="col-12" ng-show="btn_start" >
+        <button class="btn btn-primary" type="button" ng-click="start_quiz()">BẮT ĐẦU LÀM</button>
+      </div>
+
+      <div class="col-12" ng-show="quiz">
+        <section class="mb-0">
+          <div class="card card-cascade cascading-admin-card bg-white">
+            <div class="card-body card-body-cascade">
+              <h5 class="bg-white font-weight-bold" style="text-align: center;">  
+                Thời gian làm bài: {{minutes}}:{{seconds}}
+              </h5>
+
+              <div class="container mt-5" ng-app="myApp">
+                <p class="timer" style="text-align: center;"></p>
+                <div class="jumbotron rounded-bottom py-4 px-5 text-center text-md-left author-box wow fadeIn"
+                  data-wow-delay="0.3s" style="min-height: 440px;">
+                  <hr>
+                  <h4 class="h3-responsive text-center font-weight-bold dark-grey-text">Bài
+                    thi: </h4>
+                  <hr>
+                  <div class="row">
+                    <div class="col-12 col-md-12">
+                      <form name="formTest" action="">
+                        <div ng-repeat="ch in data_chvip" ng-init="start = $index + 1">
+                        <ul class="list-group m-2">
+                          <div ng-show="start == cau_hien_tai + 1">
+                            <li style="background-color: rgb(151, 250, 136);" class="list-group-item d-flex align-items-center gap-2 colored-li">
+                            <strong>Câu {{start}}: {{ch.Text}}</strong>
+                          </li>
+                          <li ng-repeat="da in ch.Answers" class="list-group-item d-flex align-items-center gap-2 colored-li">
+                            <input style="color: rgb(88, 248, 157);" 
+                                   type="radio" 
+                                   name="{{ch.AnswerId}}" 
+                                   id="{{da.Id}}"
+                                   value="quiz">
+                            <label for="{{da.Id}}">{{da.Text}}</label>
+                          </li>
+                          <div>
+                          <button type="button" ng-click="back()" class="btn btn-success text-left mt-4" ng-show="start > 1">
+                            Câu trước
+                          </button>
+                          <button type="button" ng-click="next()" class="btn btn-success text-right mt-4" ng-show="start < tong_cau_hoi">
+                            Câu sau 
+                          </button>
+                          <button type="button" ng-click="show_resutl()" class="btn btn-primary text-center mt-4">
+                            Nộp bài 
+                          </button>
+                        </div>
+                        </div>
+                        </ul>
+                        
+                      </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-12" ng-show="result">
+        <div class="container-point">
+          <p>Số câu đúng: {{so_cau_dung }}/{{tong_cau_hoi}}</p>
+          <p>Điểm của bạn: {{diem}}đ</p>
+          <a href="#!courses" class="btn btn-success">Quay về khóa học</a>
+
+          <div class="mt-4">
+            <div ng-init="checkedDA = true">
+              <ul ng-repeat="ch in data_chvip" class="list-group m-2" style="border: 1px #201c1d solid;">
+                <li style="background-color: rgb(151, 250, 136);" class="list-group-item d-flex align-items-center gap-2 colored-li">
+                  <strong>Câu {{$index + 1}}: {{ch.Text}}</strong>
+                </li>
+                <li ng-repeat="da in ch.Answers" class="list-group-item d-flex align-items-center gap-2">
+                  <input type="radio" 
+                    ng-if="ch.AnswerId === da.Id && checkedDA"
+                    checked="{{checkedDA}}"
+                    name="{{ch.AnswerId}}" 
+                    id="{{da.Id}}"
+                    value="da"
+                  >
+                  <label for="{{da.Id}}">{{da.Text}}</label>
+                </li>
+              </ul>
+            </form>
+          </div>
+        </div> 
+      </div>
+      </div>
+      
+    </div>
+  </main>
+
+</main>
